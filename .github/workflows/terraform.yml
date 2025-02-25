@@ -27,15 +27,10 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: ap-south-1
 
-      # Debug AWS credentials (you can remove this step after debugging)
-      - name: Debug AWS credentials
-        run: |
-          echo "AWS Access Key: ${{ secrets.AWS_ACCESS_KEY_ID }}"
-          echo "AWS Secret Key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}"
-
+     
       # Install the latest version of Terraform CLI
       - name: Setup Terraform
-        uses: hashicorp/setup-terraform@v1
+        uses: hashicorp/setup-terraform@v2
       
       # Initialize Terraform working directory
       - name: Terraform Init
