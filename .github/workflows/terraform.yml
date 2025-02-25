@@ -10,14 +10,12 @@ permissions:
   contents: read
 
 jobs:
-  terraform:
-    name: 'Terraform'
+ build-analyze-scan:
+    name: Build
     runs-on: [self-hosted]
-
     steps:
-      # Checkout the repository to the GitHub Actions runner
-      - name: Checkout
-        uses: actions/checkout@v4
+      - name: Checkout code
+        uses: actions/checkout@v2
       
       # Set up AWS credentials
       - name: Set up AWS credentials
